@@ -8,7 +8,7 @@ export type Agent = {
   email: string;
   bio: string;
   specialties: string[];
-  // Two colors for the generated portrait placeholder.
+  // Portrait placeholder color (the first is used; the second is kept for your own use).
   colors: [string, string];
 };
 

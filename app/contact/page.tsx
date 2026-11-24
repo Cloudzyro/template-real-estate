@@ -51,7 +51,7 @@ export default function ContactPage() {
           </div>
         </dl>
       </div>
-      <div className="h-fit rounded-3xl border border-line bg-white p-6 sm:p-8">
+      <div className="h-fit rounded-2xl border border-line bg-white p-6 sm:p-8">
         <h2 className="mb-6 font-display text-2xl font-medium">Send us a message</h2>
         <InquiryForm subject="Website inquiry" showInterest={false} />
       </div>

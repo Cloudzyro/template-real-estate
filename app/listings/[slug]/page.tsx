@@ -86,7 +86,7 @@ export default async function ListingPage({ params }: { params: Promise<Params> 
             </p>
             <h1 className="mt-2 font-display text-4xl font-medium tracking-tight sm:text-5xl">{listing.address}</h1>
             <p className="mt-2 text-lg text-muted">{listing.title}</p>
-            <p className="mt-5 font-display text-4xl font-semibold text-pine">{formatPrice(listing.price)}</p>
+            <p className="mt-5 font-display text-4xl font-medium tabular-nums text-pine">{formatPrice(listing.price)}</p>
           </header>
 
           <section aria-labelledby="facts-heading" className="mt-10">
@@ -96,8 +96,8 @@ export default async function ListingPage({ params }: { params: Promise<Params> 
             <dl className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
               {facts.map(([k, v]) => (
                 <div key={k} className="bg-white p-4">
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-muted">{k}</dt>
-                  <dd className="mt-1 font-semibold">{v}</dd>
+                  <dt className="text-sm text-muted">{k}</dt>
+                  <dd className="mt-1 font-medium tabular-nums">{v}</dd>
                 </div>
               ))}
             </dl>
@@ -114,7 +114,7 @@ export default async function ListingPage({ params }: { params: Promise<Params> 
             </div>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {listing.highlights.map((h) => (
-                <li key={h} className="flex items-start gap-3 rounded-2xl bg-sand/60 px-4 py-3 text-sm">
+                <li key={h} className="flex items-start gap-3 rounded-xl bg-sand/60 px-4 py-3 text-sm">
                   <svg viewBox="0 0 20 20" className="mt-0.5 h-4 w-4 shrink-0 text-pine" fill="currentColor" aria-hidden="true">
                     <path d="M7.6 13.6 4 10l-1.4 1.4 5 5L17.4 6.6 16 5.2z" />
                   </svg>
@@ -132,7 +132,7 @@ export default async function ListingPage({ params }: { params: Promise<Params> 
               href={mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative mt-4 block overflow-hidden rounded-3xl border border-line"
+              className="group relative mt-4 block overflow-hidden rounded-2xl border border-line"
             >
               <svg viewBox="0 0 800 320" className="h-56 w-full sm:h-72" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
                 <rect width="800" height="320" fill="#e6ece2" />
@@ -156,7 +156,7 @@ export default async function ListingPage({ params }: { params: Promise<Params> 
                   <circle cy="-12" r="6" fill="#f1e4cc" />
                 </g>
               </svg>
-              <span className="absolute bottom-4 left-4 rounded-full bg-white px-4 py-2 text-sm font-semibold text-pine shadow group-hover:bg-brass-soft">
+              <span className="absolute bottom-4 left-4 rounded-lg bg-white px-4 py-2 text-sm font-medium text-pine shadow-[0_1px_2px_rgba(0,0,0,0.05)] transition-colors group-hover:bg-brass-soft">
                 Open {listing.address} in a map (new tab)
               </span>
             </a>
@@ -165,12 +165,12 @@ export default async function ListingPage({ params }: { params: Promise<Params> 
 
         <aside className="space-y-6 lg:sticky lg:top-24 lg:h-fit" aria-label="Contact the listing agent">
           {agent && (
-            <div className="rounded-3xl border border-line bg-white p-6">
+            <div className="rounded-2xl border border-line bg-white p-6">
               <p className="eyebrow mb-4">Listing agent</p>
               <AgentCard agent={agent} compact />
             </div>
           )}
-          <div className="rounded-3xl border border-line bg-white p-6">
+          <div className="rounded-2xl border border-line bg-white p-6">
             <h2 className="font-display text-2xl font-medium">Ask about this home</h2>
             <p className="mb-5 mt-1 text-sm text-muted">Book a tour or ask a question. {agent ? agent.name.split(" ")[0] : "We"} will reply within a day.</p>
             <InquiryForm

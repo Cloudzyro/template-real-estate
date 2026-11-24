@@ -23,15 +23,15 @@ export default function AgentsPage() {
         {agents.map((a) => {
           const theirs = listings.filter((l) => l.agentId === a.id);
           return (
-            <li key={a.id} className="flex flex-col gap-6 rounded-3xl border border-line bg-white p-6 sm:flex-row">
+            <li key={a.id} className="flex flex-col gap-6 rounded-2xl border border-line bg-white p-6 sm:flex-row">
               <AgentPortrait agent={a} className="aspect-square w-full shrink-0 rounded-2xl sm:w-40" />
               <div className="min-w-0 flex-1">
-                <h2 className="font-display text-2xl font-semibold">{a.name}</h2>
+                <h2 className="font-display text-2xl font-medium">{a.name}</h2>
                 <p className="text-sm text-muted">{a.role}</p>
                 <p className="mt-3 text-sm leading-relaxed">{a.bio}</p>
                 <ul className="mt-4 flex flex-wrap gap-2" aria-label="Specialties">
                   {a.specialties.map((s) => (
-                    <li key={s} className="rounded-full bg-sand px-3 py-1 text-xs font-medium">
+                    <li key={s} className="rounded-md bg-sand px-2 py-1 text-xs font-medium">
                       {s}
                     </li>
                   ))}

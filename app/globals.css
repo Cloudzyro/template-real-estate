@@ -11,6 +11,8 @@
   --color-pine-dark: #163a2b;
   --color-brass: #b88a4a;
   --color-brass-soft: #f1e4cc;
+  /* Brass dark enough to read as text on paper. */
+  --color-brass-ink: #86602c;
 
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
   --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
@@ -56,7 +58,7 @@ body {
   @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 @utility btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors;
+  @apply inline-flex items-center justify-center gap-2 rounded-[10px] px-5 py-2.5 text-sm font-medium transition-colors;
 }
 @utility btn-primary {
   @apply btn bg-pine text-white hover:bg-pine-dark;
@@ -68,8 +70,8 @@ body {
   @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-pine focus:outline-none focus:ring-2 focus:ring-pine/20;
 }
 @utility label {
-  @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted;
+  @apply mb-1.5 block text-sm font-medium text-ink;
 }
 @utility eyebrow {
-  @apply text-xs font-semibold uppercase tracking-[0.18em] text-brass;
+  @apply text-sm font-medium text-brass-ink;
 }

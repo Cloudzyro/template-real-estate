@@ -4,7 +4,7 @@
 export const site = {
   name: "Harbor & Pine Realty",
   shortName: "Harbor & Pine",
-  tagline: "Homes with a sense of place in Larkspur Bay.",
+  tagline: "Homes with a sense of place in Larkspur Bay",
   description:
     "Harbor & Pine Realty helps buyers and sellers find homes across Larkspur Bay, from waterfront cottages in Old Harbor to modern lofts in Riverside Flats.",
   // Used for the sitemap, canonical links and social cards. Change it to your domain.
@@ -29,8 +29,8 @@ export const site = {
   ],
 
   hero: {
-    eyebrow: "Larkspur Bay real estate",
-    title: "Find the home that fits the way you live.",
+    eyebrow: "On Wharf Street since 2014",
+    title: "Homes in Larkspur Bay, from agents who live here",
     text: "Browse every listing from our team, filter by the things that matter, and talk to a local agent who knows the street, not just the square footage.",
   },
 

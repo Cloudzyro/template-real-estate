@@ -10,12 +10,12 @@ export function Footer() {
         <div className="lg:col-span-2">
           <div className="flex items-center gap-2.5">
             <Logo className="h-9 w-9" />
-            <span className="font-display text-xl font-semibold text-white">{site.name}</span>
+            <span className="font-display text-xl font-medium text-white">{site.name}</span>
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed">{site.tagline}</p>
         </div>
         <div>
-          <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-soft">Visit</h2>
+          <h2 className="text-sm font-medium text-brass-soft">Visit</h2>
           <address className="mt-3 text-sm not-italic leading-relaxed">
             {site.contact.address.map((line) => (
               <span key={line} className="block">
@@ -34,7 +34,7 @@ export function Footer() {
           </p>
         </div>
         <div>
-          <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-brass-soft">Explore</h2>
+          <h2 className="text-sm font-medium text-brass-soft">Explore</h2>
           <ul className="mt-3 space-y-2 text-sm">
             {site.nav.map((item) => (
               <li key={item.href}>

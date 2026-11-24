@@ -107,7 +107,7 @@ export function InquiryForm({ subject, to = site.contact.email, defaultMessage =
         <div role="status" className="rounded-2xl border border-line bg-paper p-4 text-sm">
           <p>This site's form is not connected yet, so nothing was sent.</p>
           <p className="mt-1">
-            <a className="font-semibold text-pine underline underline-offset-4" href={mailto}>
+            <a className="font-medium text-pine underline underline-offset-4" href={mailto}>
               Email us your message instead
             </a>{" "}
             or call {site.contact.phone}.

@@ -15,14 +15,10 @@ export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_85%_10%,#f1e4cc_0,transparent_45%),radial-gradient(circle_at_0%_100%,#dfe8dd_0,transparent_40%)]"
-        />
         <div className="container-x grid items-center gap-12 pb-16 pt-12 lg:grid-cols-[1.1fr_0.9fr] lg:pb-24 lg:pt-20">
           <div>
             <p className="eyebrow">{site.hero.eyebrow}</p>
-            <h1 className="mt-4 font-display text-[2.6rem] font-medium leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-7xl">
+            <h1 className="mt-4 font-display text-[2.6rem] font-medium leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-[4.25rem]">
               {site.hero.title}
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{site.hero.text}</p>
@@ -33,21 +29,21 @@ export default function Home() {
               {site.stats.map((s) => (
                 <div key={s.label} className="flex flex-col">
                   <dt className="text-xs leading-snug text-muted">{s.label}</dt>
-                  <dd className="order-first font-display text-2xl font-semibold text-pine sm:text-3xl">{s.value}</dd>
+                  <dd className="order-first font-display text-2xl font-medium tabular-nums text-pine sm:text-3xl">{s.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
           <div className="relative hidden lg:block">
-            <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl shadow-pine/20">
+            <div className="relative overflow-hidden rounded-3xl shadow-[0_8px_24px_rgba(28,36,32,0.08)]">
               <PropertyArt listing={hero} className="aspect-[4/5] w-full" label={`Illustration of ${hero.address}`} />
             </div>
             <Link
               href={`/listings/${hero.slug}/`}
-              className="absolute -bottom-6 -left-8 w-72 rounded-3xl bg-white p-5 shadow-xl ring-1 ring-line transition hover:-translate-y-0.5"
+              className="absolute -bottom-6 -left-8 w-72 rounded-2xl bg-white p-5 shadow-[0_8px_24px_rgba(28,36,32,0.1)] ring-1 ring-line transition-colors hover:bg-paper"
             >
               <p className="eyebrow">Just listed</p>
-              <p className="mt-1 font-display text-lg font-semibold leading-snug">{hero.title}</p>
+              <p className="mt-1 font-display text-lg font-medium leading-snug">{hero.title}</p>
               <p className="mt-1 text-sm text-muted">
                 {hero.neighborhood} &middot; {hero.beds} bd &middot; {hero.baths} ba
               </p>
@@ -83,17 +79,17 @@ export default function Home() {
           <h2 id="areas-heading" className="mt-2 max-w-2xl font-display text-4xl font-medium tracking-tight">
             {site.neighborhoodsHeading}
           </h2>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <ul className="mt-10 border-b border-ink/10">
             {site.neighborhoods.map((n, i) => (
-              <li key={n.name}>
+              <li key={n.name} className="border-t border-ink/10">
                 <Link
                   href={`/listings/?area=${encodeURIComponent(n.name)}`}
-                  className="group flex h-full flex-col rounded-3xl bg-paper p-6 ring-1 ring-line transition hover:bg-white hover:shadow-lg"
+                  className="grid grid-cols-[40px_1fr] items-baseline gap-x-4 gap-y-1 py-5 transition-colors hover:bg-paper/70 sm:grid-cols-[56px_1fr_1.6fr_auto] sm:gap-x-6 sm:px-4"
                 >
-                  <span className="font-display text-sm text-brass">0{i + 1}</span>
-                  <span className="mt-6 font-display text-2xl font-medium leading-tight">{n.name}</span>
-                  <span className="mt-2 flex-1 text-sm leading-relaxed text-muted">{n.blurb}</span>
-                  <span className="mt-5 text-sm font-semibold text-pine">
+                  <span className="font-display text-lg tabular-nums text-brass-ink">0{i + 1}</span>
+                  <span className="font-display text-2xl font-medium leading-tight">{n.name}</span>
+                  <span className="col-start-2 text-sm leading-relaxed text-muted sm:col-start-auto">{n.blurb}</span>
+                  <span className="col-start-2 text-sm font-medium text-pine sm:col-start-auto sm:text-right">
                     {counts[n.name]} {counts[n.name] === 1 ? "home" : "homes"} for sale
                   </span>
                 </Link>
@@ -122,10 +118,10 @@ export default function Home() {
         <ul className="grid grid-cols-2 gap-4">
           {agents.map((a, i) => (
             <li key={a.id} className={i % 2 ? "translate-y-8" : ""}>
-              <div className="overflow-hidden rounded-3xl bg-white ring-1 ring-line">
+              <div className="overflow-hidden rounded-2xl bg-white ring-1 ring-line">
                 <AgentPortrait agent={a} className="aspect-square w-full" />
                 <div className="p-4">
-                  <p className="font-display text-lg font-semibold leading-tight">{a.name}</p>
+                  <p className="font-display text-lg font-medium leading-tight">{a.name}</p>
                   <p className="text-xs text-muted">{a.role}</p>
                 </div>
               </div>
@@ -135,11 +131,10 @@ export default function Home() {
       </section>
 
       <section className="container-x pt-8" aria-labelledby="cta-heading">
-        <div className="relative overflow-hidden rounded-[2.5rem] bg-pine px-6 py-14 text-white sm:px-12">
-          <div aria-hidden="true" className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-brass/30 blur-2xl" />
+        <div className="relative overflow-hidden rounded-3xl bg-pine px-6 py-14 text-white sm:px-12">
           <div className="relative max-w-2xl">
             <h2 id="cta-heading" className="font-display text-3xl font-medium tracking-tight sm:text-4xl">
-              Thinking of selling? Find out what your home is worth.
+              Thinking of selling? Find out what your home is worth
             </h2>
             <p className="mt-4 text-white/80">
               Get a free, no-pressure price opinion from an agent who has sold on your street, with recent sales and a plan to match.

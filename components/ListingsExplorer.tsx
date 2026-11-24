@@ -80,7 +80,7 @@ export function ListingsExplorer() {
       <form
         role="search"
         aria-label="Filter listings"
-        className="h-fit space-y-5 rounded-3xl border border-line bg-white p-5 lg:sticky lg:top-24"
+        className="h-fit space-y-5 rounded-2xl border border-line bg-white p-5 lg:sticky lg:top-24"
         onSubmit={(e) => e.preventDefault()}
       >
         <div>
@@ -157,7 +157,7 @@ export function ListingsExplorer() {
             {["", ...types].map((t) => (
               <label key={t || "any"} className="cursor-pointer">
                 <input type="radio" name="type" value={t} checked={f.type === t} onChange={set("type")} className="peer sr-only" />
-                <span className="inline-block rounded-full border border-line px-3 py-1.5 text-sm transition-colors peer-checked:border-pine peer-checked:bg-pine peer-checked:text-white peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brass">
+                <span className="inline-block rounded-lg border border-line px-3 py-1.5 text-sm transition-colors peer-checked:border-pine peer-checked:bg-pine peer-checked:text-white peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-brass">
                   {t || "Any"}
                 </span>
               </label>
@@ -165,7 +165,7 @@ export function ListingsExplorer() {
           </div>
         </fieldset>
         {active && (
-          <button type="button" className="text-sm font-semibold text-pine underline underline-offset-4" onClick={() => setF({ ...empty, sort: f.sort })}>
+          <button type="button" className="text-sm font-medium text-pine underline underline-offset-4" onClick={() => setF({ ...empty, sort: f.sort })}>
             Clear filters
           </button>
         )}
@@ -195,7 +195,7 @@ export function ListingsExplorer() {
             ))}
           </ul>
         ) : (
-          <div className="rounded-3xl border border-dashed border-line bg-white/60 p-10 text-center">
+          <div className="rounded-2xl border border-dashed border-line bg-white/60 p-10 text-center">
             <p className="font-display text-2xl">No homes match those filters yet.</p>
             <p className="mt-2 text-sm text-muted">Try a wider price range or a different neighborhood, or tell us what you need and we will keep an eye out.</p>
             <button type="button" className="btn-primary mt-5" onClick={() => setF(empty)}>

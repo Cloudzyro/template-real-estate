@@ -20,7 +20,7 @@ export default function AboutPage() {
           <h1 className="mt-2 font-display text-4xl font-medium tracking-tight text-balance sm:text-5xl">{site.about.title}</h1>
           <p className="mt-5 text-lg leading-relaxed text-muted">{site.about.intro}</p>
         </div>
-        <div className="overflow-hidden rounded-[2.5rem] shadow-xl shadow-pine/10">
+        <div className="overflow-hidden rounded-3xl shadow-[0_8px_24px_rgba(28,36,32,0.08)]">
           <PropertyArt listing={art} className="aspect-[4/3] w-full" label="Illustration of a row of brick townhouses in Old Harbor" />
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function AboutPage() {
         </h2>
         <ul className="mt-8 grid gap-6 md:grid-cols-3">
           {site.about.values.map((v, i) => (
-            <li key={v.title} className="rounded-3xl border border-line bg-white p-6">
+            <li key={v.title} className="rounded-2xl border border-line bg-white p-6">
               <span className="font-display text-sm text-brass">0{i + 1}</span>
               <h3 className="mt-4 font-display text-2xl font-medium">{v.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{v.text}</p>

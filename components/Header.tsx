@@ -24,7 +24,7 @@ export function Header() {
       <div className="container-x flex h-16 items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2.5 rounded-md" aria-label={`${site.name} home`}>
           <Logo className="h-8 w-8" />
-          <span className="font-display text-lg font-semibold tracking-tight">{site.name}</span>
+          <span className="font-display text-lg font-medium tracking-tight">{site.name}</span>
         </Link>
 
         <nav aria-label="Main" className="hidden md:block">
@@ -36,7 +36,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={`rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
+                    className={`rounded-lg px-3.5 py-2 text-sm font-medium transition-colors ${
                       active ? "bg-sand text-ink" : "text-muted hover:text-ink"
                     }`}
                   >

@@ -16,7 +16,7 @@ export function ListingGallery({ listing }: { listing: Listing }) {
         <div className="absolute left-4 top-4">
           <StatusBadge status={listing.status} />
         </div>
-        <p className="absolute bottom-4 right-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-medium text-white" aria-live="polite">
+        <p className="absolute bottom-4 right-4 rounded-md bg-ink/70 px-2 py-1 text-xs font-medium text-white" aria-live="polite">
           {current.label} &middot; {index + 1} of {galleryViews.length}
         </p>
         <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-3">
@@ -50,7 +50,7 @@ export function ListingGallery({ listing }: { listing: Listing }) {
               onClick={() => setIndex(i)}
               aria-label={`Show ${g.label.toLowerCase()}`}
               aria-pressed={i === index}
-              className={`block w-full overflow-hidden rounded-xl ring-2 transition ${i === index ? "ring-pine" : "ring-transparent opacity-75 hover:opacity-100"}`}
+              className={`block w-full overflow-hidden rounded-xl ring-2 transition-[opacity,box-shadow] ${i === index ? "ring-pine" : "ring-transparent opacity-75 hover:opacity-100"}`}
             >
               <PropertyArt listing={listing} view={g.view} className="aspect-[4/3] w-full" label="" />
             </button>
